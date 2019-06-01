@@ -1,6 +1,16 @@
 #!/usr/bin/env php
 <?php
-$birthday = '1985-11-03';
+$args = getopt('b:', ['birthday::']);
+if (isset($args['b']))
+	$birthday = $args['b'];
+else
+	if (isset($args['birthday']))
+		$birthday = $args['birthday'];
+	else
+		$birthday = date('Y-m-d');
+/* php7
+$birthday = $args['b'] || $args['birthday'] || date('Y-m-d');
+*/
 $today = date('Y-m-d');
 
 $birthdayStamp = strtotime($birthday);
