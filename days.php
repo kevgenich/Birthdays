@@ -1,5 +1,7 @@
 #!/usr/bin/env php
 <?php
+require_once('birthday.php');
+
 $args = getopt('b:', ['birthday::']);
 if (isset($args['b']))
 	$birthday = $args['b'];
@@ -8,13 +10,8 @@ else
 		$birthday = $args['birthday'];
 	else
 		$birthday = date('Y-m-d');
-/* php7
-$birthday = $args['b'] || $args['birthday'] || date('Y-m-d');
-*/
-$today = date('Y-m-d');
 
-$birthdayStamp = strtotime($birthday);
-$todayStamp = strtotime($today);
-$totalDays = floor(($todayStamp - $birthdayStamp) / 3600 / 24);
+$days = new \kevgenich\Birthday($birthday);
+$totalDays = $days->calcDays();
 
 echo "your birthday: $birthday, you lived: $totalDays days\n";
