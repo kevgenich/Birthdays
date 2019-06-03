@@ -1,6 +1,6 @@
 #!/usr/bin/env php
 <?php
-require_once('birthday.php');
+require_once('vendor/autoload.php');
 
 $args = getopt('b:', ['birthday::']);
 if (isset($args['b']))

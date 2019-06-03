@@ -1,0 +1,18 @@
+{
+    "name": "kevgenich/days",
+    "description": "Calculate days number from birthday to today",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "kevgenich",
+            "email": "evgenich_85@mail.ru"
+        }
+    ],
+    "require": {},
+    "autoload": {
+	"psr-4": {
+	    "kevgenich\\": "."
+	}
+    }
+}
